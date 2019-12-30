@@ -1,40 +1,37 @@
 void game() {
 strokeWeight(1);
-//if ((!marsSwitch && !moonSwitch) || (marsSwitch && !moonSwitch)) {
-    //  if (graphics) {
-    //  if (rectX <= -(((width/0.2052)*2)-width)) {      
-    //      rectX = width;
-    //    }
-    //  if(rectX3 <= -(((width/0.2052)*2)-width)) {
-    //      rectX3 = width;
-    //    }
-    //  rectX -= floorStep;
-    //  rectX3 -= floorStep;
+if (graphics) {
+  if ((!marsSwitch && !moonSwitch) || (marsSwitch && !moonSwitch)) {
+    if (rectX <= -rectX2052) {      
+        rectX = width;
+      }
+    if(rectX3 <= -rectX2052) {
+        rectX3 = width;
+      }
+    rectX -= floorStep;
+    rectX3 -= floorStep;
+    
+    if (bgY > -height) {
+    bgY -= height/70;
+    }
       
-    //  if (bgY > -height) {
-    //  bgY -= height/70;
-    //  }
-    //}
-// *****************************
-//} else 
-//if ((!marsSwitch && moonSwitch)) {
-//  if (moonXbgL <= -(((width/0.3078)*2)-width)) {      
-//      moonXbgL = width;
-//    }
-//  if(moonXbgR <= -(((width/0.3078)*2)-width)) {
-//      moonXbgR = width;
-//    }
-//rectX -= floorStep;
-//rectX3 -= floorStep;
-//}
-
-//fill(0);
-//textSize(32);
-//text(rectX,width/2,height*0.75);
-//text(rectX3,width/2,height*0.85);
+    //*****************************
+  } else 
+  if ((!marsSwitch && moonSwitch)) {
+    if (rectX <= -rectX2052) {      
+        rectX = width;
+      }
+    if(rectX3 <= -rectX2052) {
+        rectX3 = width;
+      }
+    rectX -= floorStep;
+    rectX3 -= floorStep;
+  }
+}
 
  translate(0,0,1); 
- 
+ // this commented code below was intended for background changing each at different levels of the game
+ //*******************************************************************************
   //if (!go1 && !go2) {
   //  //background(bg1);//0, 175, 200);
   //  image(rectImg1,rectX1,rectY);//0, 175, 200);
@@ -73,57 +70,57 @@ strokeWeight(1);
 
   // first blue box
   noStroke();
-  fill(0,0,trans/3);
-  ellipse(bx1, by1, bRad*1.2, bRad*1.2);
+  fill(0,0,trans);
+  ellipse(bx1, by1, bRad*1.27, bRad*1.27);
   fill(0, 0, pulse);
   rect(bx1, by1, bRad, bRad);
-  fill(0,0,trans/3);
-  ellipse(bx1, by1, bRad*0.9, bRad*0.9);
+  fill(0,0,trans);
+  ellipse(bx1, by1, bRad, bRad);
 
   // second blue box
   if (go2) {
     noStroke();
-    fill(trans/3,0,0);
-    ellipse(bx2, by2, bRad*1.2, bRad*1.2);
+    fill(trans,0,0);
+    ellipse(bx2, by2, bRad*1.27, bRad*1.27);
     fill(pulse, 0, 0);
     rect(bx2, by2, bRad, bRad);
-    fill(trans/3,0,0);
-    ellipse(bx2, by2, bRad*0.9, bRad*0.9);
+    fill(trans,0,0);
+    ellipse(bx2, by2, bRad, bRad);
   }
 
   // third blue box
   if (go3) {
     noStroke();
-    fill(0,trans/3,0);
-    ellipse(bx3, by3, bRad*1.2, bRad*1.2);
+    fill(0,trans,0);
+    ellipse(bx3, by3, bRad*1.27, bRad*1.27);
     fill(0, pulse, 0);
     rect(bx3, by3, bRad, bRad);
-    fill(0,trans/3,0);
-    ellipse(bx3, by3, bRad*0.9, bRad*0.9);
+    fill(0,trans,0);
+    ellipse(bx3, by3, bRad, bRad);
   }
 
   // fourth blue box
   if (go4) {
     noStroke();
-    fill(trans/3,0,trans/3);
-    ellipse(bx4, by4, bRad*1.2, bRad*1.2);
+    fill(trans,0,trans);
+    ellipse(bx4, by4, bRad*1.27, bRad*1.27);
     fill(pulse, 0, pulse);
     rect(bx4, by4, bRad, bRad);
-    fill(trans/3,0,trans/3);
+    fill(trans,0,trans);
     //noStroke();
     //noStroke();
-    ellipse(bx4, by4, bRad*0.9, bRad*0.9);
+    ellipse(bx4, by4, bRad, bRad);
   }
 
   // fifth blue box
   if (go5) {
     noStroke();
-    fill(0,trans/3,trans/3);
-    ellipse(bx5, by5, bRad*1.2, bRad*1.2);
+    fill(0,trans,trans);
+    ellipse(bx5, by5, bRad*1.27, bRad*1.27);
     fill(0, pulse, pulse);
     rect(bx5, by5, bRad, bRad);
-    fill(0,trans/3,trans/3);
-    ellipse(bx5, by5, bRad*0.9, bRad*0.9);
+    fill(0,trans,trans);
+    ellipse(bx5, by5, bRad, bRad);
   }
 
   // black box
@@ -184,9 +181,9 @@ strokeWeight(1);
   noStroke();
   fill(tRed, 255, 0);
   triangle(tx, (ty*0.95), tx-(base), ty, tx+(base), ty);
-  fill(tRed1, 255, 0);
+  fill(0,tRed1, 255);
   triangle(tx1, (ty*0.95), tx1-(base), ty, tx1+(base), ty);
-  fill(tRed2, 255, 0);
+  fill(255,tRed2/2, tRed2);
   triangle(tx2, (ty*0.95), tx2-(base), ty, tx2+(base), ty);
   //tx -= W/225;
   //tx1 -= W/175;
@@ -196,59 +193,47 @@ strokeWeight(1);
 
   //*******************************
 // change text color according to background
-  textSize(height*0.09);
+  textSize(textHeight);
   textAlign(CENTER, TOP);
-  if (!marsSwitch) {
-  fill(255,175,0);
-  } else {fill(255,0,0);}
-
-  text(liveCount, width/2, height*0.005); // prints points
+  //if (!marsSwitch) {
+  //fill(255,175,0);
+  //} else {fill(255,0,0);}
+  fill(255,0,0);
+  text(liveCount, textWidthPos, textHeightPos); // prints points
 
 //updates ball position
   a += g;
   v += a;
   y = v;
   //xv += xa;
+  xv *= 0.995; // bouncing against spikes
   x += xv;
 
 // updates every other object position according to portrait/ladscape modes
-if (height > width) {
-  bx1 -= width/120;
-  if (go2) {bx2 -= width/150;}
-   if (go3) {bx3 -= width/180;}
-    if (go4) {bx4 -= width/210;}
-      if (go5) {bx5 -= width/240;}
-  nx -= width/394;
-  cx -= width/84;
-  cx1 -= width/110;
-  tx -= width/200;
-  tx1 -= width/170;
-  tx2 -= width/140;
-} else if (width > height) {
-  bx1 -= W/120;
-  if (go2) {bx2 -= W/150;}
-   if (go3) {bx3 -= W/180;}
-    if (go4) {bx4 -= W/210;}
-      if (go5) {bx5 -= W/240;}
-  nx -= W/394;
-  cx -= W/84;
-  cx1 -= W/110;
-  tx -= W/200;
-  tx1 -= W/170;
-  tx2 -= W/140;
-}
-
-  //******************************  // updates ball Y position
+    bx1 -= bx1_;
+    if (go2) {bx2 -= bx2_;}
+     if (go3) {bx3 -= bx3_;}
+      if (go4) {bx4 -= bx4_;}
+        if (go5) {bx5 -= bx5_;}
+    nx -= nx_;
+    cx -= cx_;
+    cx1 -= cx1_;
+    tx -= tx_;
+    tx1 -= tx1_;
+    tx2 -= tx2_;
 
   // checks bottom & top edges of the screen
   if (y >= height-(rad*1.15)) {
     y = height-(rad*1.15);
     a = -1*(abs(a*0.95));
+      bounce1.play();
+
     //ground.trigger();
   } else 
   if (y <= rad*1.15) {
     y = (rad*1.15);
     a = (abs(a*0.3));
+      bounce2.play();
   }
 
   // Cubo Azul Y edges
@@ -260,7 +245,8 @@ if (height > width) {
       badPoints1--;
       //pulseBlue= 200;
       //pulseGreen = 0;
-    }
+      boing3.play();
+  }
   }
 
   if (y-rad <= by1+(bRad*0.5)) {
@@ -269,6 +255,7 @@ if (height > width) {
       a = (abs(a*0.99));
       liveCount--;
       badPoints1--;
+      boing3.play();
       //pulseRed = 0;
       //pulseGreen = 0;
     }
@@ -284,6 +271,7 @@ if (height > width) {
       badPoints1--;
         //pulseRed = 0;
         //pulseGreen = 0;
+      boing3.play();
       }
     }
 
@@ -309,6 +297,7 @@ if (height > width) {
       badPoints1--;
         //pulseRed = 0;
         //pulseGreen = 0;
+      boing3.play();
       }
     }
 
@@ -320,6 +309,7 @@ if (height > width) {
       badPoints1--;
         //pulseRed = 0;
         //pulseGreen = 0;
+      boing3.play();
       }
     }
   }
@@ -334,6 +324,7 @@ if (height > width) {
       badPoints1--;
         //pulseRed = 0;
         //pulseGreen = 0;
+      boing3.play();
       }
     }
 
@@ -345,6 +336,7 @@ if (height > width) {
       badPoints1--;
         //pulseRed = 0;
         //pulseGreen = 0;
+      boing3.play();
       }
     }
   }
@@ -357,6 +349,7 @@ if (height > width) {
         a = -1*(abs(a*0.99));
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -368,19 +361,20 @@ if (height > width) {
         a = (abs(a*0.99));
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
     }
   }
 
-  // updates ball X position
 
   // checks left & right edges
   if (x >= width-rad) {
     x = width-rad;
     xa *= -1*abs(xa*0.99);
     xv *= -0.99;
+      bounce6.play();
     //rightWall.trigger();
   } else 
   if (x <= rad) {
@@ -388,6 +382,7 @@ if (height > width) {
     xa *= -1*abs(xa*0.99);
     xv *= -0.99;
     //leftWall.trigger();
+      bounce3.play();
   }
 
   // blue box X edges
@@ -398,6 +393,7 @@ if (height > width) {
       xv *= -0.99;
       liveCount--;
       badPoints1--;
+      boing3.play();
       //pulseRed = 0;
       //pulseGreen = 0;
     }
@@ -410,6 +406,7 @@ if (height > width) {
       xv *= -0.99;
       liveCount--;
       badPoints1--;
+      boing3.play();
       //pulseRed = 0;
       //pulseGreen = 0;
     }
@@ -424,6 +421,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -436,6 +434,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -451,6 +450,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -463,6 +463,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -478,6 +479,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -490,6 +492,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -505,6 +508,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -517,6 +521,7 @@ if (height > width) {
         xv *= -0.99;
         liveCount--;
       badPoints1--;
+      boing3.play();
         //pulseRed = 0;
         //pulseGreen = 0;
       }
@@ -527,21 +532,17 @@ if (height > width) {
   if (y+rad >= ny-(bRad*0.5) && y-rad <= ny+(bRad*0.5) && x+rad >= nx-(bRad*0.5) && x-rad <= nx+(bRad*0.5) ) {
     liveCount -= 10;
       badPoints2 -= 10;
+      boing4.play();
     //pulse = 255;
   }
 
   // checks spinning box1 for touch
   if (y+rad >= cy-(bRad*0.5) && y-rad <= cy+(bRad*0.5) && x+rad >= cx-(bRad*0.5) && x-rad <= cx+(bRad*0.5) ) {
     green -= 5;
-    //textSize(32);
-    //fill(red, green, 0);
-    //  text(-(green-255), cx, cy-rad*2);
-    //liveCount += 10/51;
-    //pulseBlue= 255;
-    //pulseGreen = 150;
   }
 
   if (green == 0) {
+    fairy1.play();
     liveCount += 10;
       plusPoints1 += 10;
     green = 255;
@@ -551,10 +552,12 @@ if (height > width) {
   if (y+rad >= cy1-(bRad*0.5) && y-rad <= cy1+(bRad*0.5) && x+rad >= cx1-(bRad*0.5) && x-rad <= cx1+(bRad*0.5)) {
     liveCount += 3;
       plusPoints2 += 3;
+    fairy2.play();
     //pulseRed = 0;
     //pulseGreen = 255;
   }
 
+// ************************* checks for 2nd, 3rd, 4th and 5th levels
   if (liveCount >= 300) {
     if (go2 == false) {
       go2 = true;
@@ -576,7 +579,8 @@ if (height > width) {
     }
   }
 
-  //bx -= 3; //***************************************************************************************
+  // randomly generates objects's next position after disapearing on left edge
+  //***************************************************************************************
 
   if (bx1 < -rad*2) {
     bx1 = width+(rad*2);
@@ -623,38 +627,46 @@ if (height > width) {
   // checks spikes edges
   if (y+rad >= (ty*0.95) && x+rad >= tx && x-rad <= tx) {
     y = (ty*0.95)-rad;
-    a = -1*(abs(a*0.95));
+    a = -1*(abs(a*0.9));
+    xv = -((tx - x)*0.1);
+    a -= abs(xv/2);
     liveCount--;
       badPoints3--;
     tRed = 255;
+    boing1.play();
   }
-
   if (y+rad >= (ty*0.95) && x+rad >= tx1 && x-rad <= tx1) {
     y = (ty*0.95)-rad;
-    a = -1*(abs(a*0.95));
+    a = -1*(abs(a*0.9));
+    xv = -((tx1 - x)*0.1);
+    a -= abs(xv/2);
     liveCount--;
       badPoints3--;
     tRed1 = 255;
+    boing1.play();
   }
-
   if (y+rad >= (ty*0.95) && x+rad >= tx2 && x-rad <= tx2) {
     y = (ty*0.95)-rad;
-    a = -1*(abs(a*0.95));
+    a = -1*(abs(a*0.9));
+    xv = -((tx2 - x)*0.1);
+    a -= abs(xv/2);
     liveCount--;
       badPoints3--;
     tRed2 = 255;
+    boing1.play();
   }
 
 if (tRed > 0) {
-  tRed -= 10;
+  tRed -= 5;
 }
 if (tRed1 > 0) {
-  tRed1 -= 10;
+  tRed1 -= 5;
 }
 if (tRed2 > 0) {
-  tRed2 -= 10;
+  tRed2 -= 5;
 }
-  xv *= 0.995; // bouncing against spikes
+
+// randomly generates ground spikes
 
   if (tx <= -rad*2) {
     tx = random(width, width*2);
@@ -675,32 +687,17 @@ if (tRed2 > 0) {
     if (death == 1 && (badPoints1 < 0 || badPoints2 < 0 || badPoints3 < 0)) {
       died = true;
       scoreBool = true;
-      //sec2 += (second() - sec1);
-      //min2 += ((minute() - min1));
-      //hr2 += (hour() - hr1);
-//bgY = -height*0.65; /*********************************************************** background */
+//bgY = -height*0.65; 
+/*********************************************************** background */
       mill2 += millis()-mill1;
       } 
       else if (death == 2 && liveCount < 0) {
       died = true;
       scoreBool = true;
-      //sec2 += (second() - sec1);
-      //min2 += ((minute() - min1));
-      //hr2 += (hour() - hr1);
 //bgY = -height*0.65; /*********************************************************** background */
       mill2 += millis()-mill1;
       } 
     
-  //if (death == 3) {
-  //} else if (death == 2 && liveCount < 0) {
-  //    died = true;
-  //    reset();
-  //  } else if(death == 1) {
-  //    if (badPoints1 < 0 || badPoints2 < 0 || badPoints3 < 0){
-  //      died = true;
-  //      reset();
-  //    }
-  //  }
 /******************************** mouse pressed *******************************/
 
   if (mousePressed && mouseX < width*0.60 && mouseX > width*0.40 && mouseY < height*0.1) {
@@ -711,38 +708,10 @@ if (tRed2 > 0) {
     mill2 += millis()-mill1; // 75 secs, millis() = (23+75)
     millPause1 = millis();
     pauseCount1++;
-  //mill2 = mill2 - mill;
-      //sec2 += (second() - sec1) ;
-      //min2 += ((minute() - min1) );
-      //hr2 += (hour() - hr1);
-
-      //if (sec2 > 59) {
-      //  min2 += 1;
-      //  sec2 = 0;
-      //}
-      //if (min2 > 59) {
-      //  hr2 += 1;
-      //  min2 = 0;
-      //}
-    //secPause1 = second();
-    //minPause1 = minute();
 }
 
   if (mousePressed && mouseX <= width*0.1 && mouseY <= height*0.1) {
     reset();
   }
 
-  //if (mousePressed && mouseX > width*0.9 && mouseY < height*0.1) {
-  //    if (boolBall == true && boolVolley == true){
-  //      boolBall = false;
-  //      boolVolley = false;
-  //    } else 
-  //    if (boolBall == false && boolVolley == false) {
-  //      boolVolley = true;
-  //      //boolBall = true; 
-  //    } else if (boolBall == false && boolVolley == true) {
-  //      boolBall = true;
-  //    }
-  //}
-    //text(sec2,width/2,height-rad*2);
 }

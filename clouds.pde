@@ -1,19 +1,12 @@
 void clouds() {
-  //pushMatrix();
-  //translate(0, 0, -1);
   noStroke();
   fill(255,100);
   ellipse(cloudX, cloudY, cloudW, cloudH);
-  cloudX -= 0.3;
+  cloudX -= 0.4;
   ellipse(cloudX1, cloudY1, cloudW1, cloudH1);
-  cloudX1 -= 0.35;
+  cloudX1 -= 0.45;
   ellipse(cloudX2, cloudY2, cloudW2, cloudH2);
-  cloudX2 -= 0.4;
-  //fill(0, 125, 0);
-  //rect(width*0.5, height*0.99, width*1.5, height*0.2);
-  //popMatrix();
-  //cloudX -= 0.3;
-  //cloudX1 -= 0.3;
+  cloudX2 -= 0.5;
 
   if (cloudX <= -cloudW) {
     if (!marsSwitch) {

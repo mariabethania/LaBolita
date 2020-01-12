@@ -1,7 +1,8 @@
 
 // Este es el mero mero,...
 
-import cassette.audiofiles.SoundFile;
+import processing.sound.*;
+//import cassette.audiofiles.SoundFile;
 
 SoundFile bounce1,bounce2,bounce3,bounce4,bounce5,bounce6,ballKick;
 SoundFile handServe1,handServe2,handServe3,handServe4,handServe5,handServe6,boing1,boing2,boing3,boing4;
